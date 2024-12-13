@@ -1,0 +1,17 @@
+# Archivos y directorios de WordPress
+wp-admin/
+wp-includes/
+wp-content/
+
+# Archivos de configuración locales
+wp-config.php
+
+# Archivos de sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Archivos temporales
+*.log
+*.swp
