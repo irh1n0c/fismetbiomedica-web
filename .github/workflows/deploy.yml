@@ -3,7 +3,7 @@ name: Deploy to WordPress Site
 on:
   push:
     branches: 
-      - main  # Se activa cuando hagas push a la rama main
+      - main
 
 jobs:
   deploy:
@@ -15,9 +15,9 @@ jobs:
     - name: Deploy via SFTP
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
-        username: 'tu_usuario_ftp'
-        server: 'fismetbiomedica.com'
-        port: 22  # Puerto SSH estándar
-        local_path: './'  # Todos los archivos del repositorio
-        remote_path: '/public_html/'  # Ruta en tu servidor
+        username: ${{ secrets.FTP_USERNAME }}
+        server: ${{ secrets.FTP_SERVER }}
+        port: ${{ secrets.FTP_PORT }}
+        local_path: './'
+        remote_path: '/public_html/'
         sftp_password: ${{ secrets.FTP_PASSWORD }}
